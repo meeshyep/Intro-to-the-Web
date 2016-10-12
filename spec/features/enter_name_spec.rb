@@ -1,4 +1,4 @@
-require_relative "./app"
+require "./app"
 
 feature "Enter name" do
   scenario "User enters name" do
