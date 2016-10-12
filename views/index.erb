@@ -1,5 +1,73 @@
+<style>
+  @import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+
+  body {
+    font-size: 30px;
+    text-transform: uppercase;
+    background: url('http://i.imgur.com/VNfw0A4.gif');
+    background-size: cover;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+  }
+  .players {
+    width: 50%;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
+
+  .players div {
+    width: 50%;
+    float: left;
+  }
+
+  .player2 {
+    clear: right;
+  }
+
+  .wrapper {
+    text-align: center;
+  }
+
+  form button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 0;
+    border-bottom: 4px solid #921919;
+    margin-top: 140px;
+    background: #C91212;
+    width: 40%;
+    height: 10%;
+    color: #fff;
+    font-size: 22px;
+    font-family: 'Press Start 2P', cursive;
+    padding-left: 20px;
+  }
+
+  form input {
+    margin-top: 20px;
+    width: 85%;
+    height: 35px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+</style>
+
 <form name="input" action="/names" method="post">
- Player 1: <input type="text" name="name_1">
- Player 2: <input type="text" name="name_2">
- <input type="submit" value="Start">
- </form>
+  <div class="players">
+    <div class="player1">
+      <label for "name1">Player 1</label><br>
+      <input type="text" name="name_1" value="Enter name...">
+    </div>
+    <div class="player2">
+      <label for "name2">Player 2</label><br>
+      <input type="text" name="name_2" value="Enter name...">
+    </div>
+      <button class="submit" type="submit" value="Start">FIGHT!</button>
+  </div>
+</form>
