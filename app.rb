@@ -6,7 +6,6 @@ class Battle < Sinatra::Base
 enable :sessions
 
   get '/' do
-    'Hello Battle!'
     erb(:index)
   end
 
@@ -18,17 +17,17 @@ enable :sessions
   end
 
   get '/play' do
-    @name_1 = $player_1.name
-    @name_2 = $player_2.name
+    @player_1 = $player_1
+    @player_2 = $player_2
     @status = nil
+    @status = session[:status]
     erb (:play)
   end
 
   post '/attack' do
-    @name_1 = $player_1.name
-    @name_2 = $player_2.name
-    @status = "attack"
-    erb (:play)
+    session[:status] = 'attack'
+    $player_2.deduct
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly

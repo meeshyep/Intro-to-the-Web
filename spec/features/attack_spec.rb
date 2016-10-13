@@ -1,9 +1,18 @@
 require "./app"
 
 feature "Attack player 2" do
-  scenario "As a player 1" do
+
+  before :each do
     sign_in_and_play
     click_button "Attack"
+  end
+
+  scenario "As player 1" do
     expect(page).to have_text("#{$player_1.name} attacked #{$player_2.name}")
   end
+
+  scenario "As player 1" do
+    expect(page).to have_text("#{$player_2.hitpoints}")
+  end
+
 end

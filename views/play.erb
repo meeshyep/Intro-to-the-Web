@@ -67,8 +67,8 @@
 
 <div class="container">
   <div class="left">
-    <%= @name_1 %>
-    <p class="hitpoints">HITPOINTS = 100</p>
+    <%= @player_1.name %>
+    <p class="hitpoints"> HITPOINTS = <%= @player_1.hitpoints %>  </p>
     <img src="http://67.media.tumblr.com/tumblr_mdf4r6t5yk1rptf33o1_500.gif">
   </div>
   <div class="middle">
@@ -78,12 +78,12 @@
     </form>
   </div>
   <div class="right">
-    <%= @name_2 %>
-    <p class="hitpoints">HITPOINTS = 100</p>
+    <%= @player_2.name %>
+    <p class="hitpoints"> HITPOINTS = <%= @player_2.hitpoints %> </p>
     <img src="http://66.media.tumblr.com/tumblr_m2ewv8Psq21rptf33o1_500.gif">
   </div>
   <% if @status == "attack" %>
-      <p class="attack-text"> <%= @name_1 %> attacked <%= @name_2 %>!</p>
+      <p class="attack-text"> <%= @player_1.name %> attacked <%= @player_2.name %>!</p>
   <%end %>
 
 </div>

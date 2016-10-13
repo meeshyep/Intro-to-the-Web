@@ -7,4 +7,8 @@ class Player
     @hitpoints = DEFAULT_HITPOINTS
   end
 
+  def deduct(amount = 10)
+    @hitpoints -= 10 
+  end
+
 end
