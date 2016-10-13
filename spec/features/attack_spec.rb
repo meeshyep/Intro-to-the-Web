@@ -14,5 +14,4 @@ feature "Attack player 2" do
   scenario "As player 1" do
     expect(page).to have_text("#{$game.player_2.hitpoints}")
   end
-
 end
