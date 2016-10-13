@@ -40,10 +40,28 @@
     width: 20%;
   }
 
+  .middle button {
+    width: 15%;
+    height: 5%;
+    position: absolute;
+    top: 400;
+    right: 530;
+    text-transform: uppercase;
+  }
+
   .hitpoints {
     font-size: 18px;
     color: red;
   }
+
+  .attack-text {
+    font-size: 16px;
+    color: red;
+    text-shadow: 2px 2px #000;
+    text-align: center;
+    position: relative;
+    top: -370;
+    }
 
 </style>
 
@@ -55,17 +73,17 @@
   </div>
   <div class="middle">
     vs
+    <form action="/attack" method="post">
+      <button type="submit"> Attack </button>
+    </form>
   </div>
   <div class="right">
     <%= @name_2 %>
     <p class="hitpoints">HITPOINTS = 100</p>
     <img src="http://66.media.tumblr.com/tumblr_m2ewv8Psq21rptf33o1_500.gif">
   </div>
-  <form action="/attack" method="post">
-    <button type="submit"> Attack </button>
-  </form>
-</div>
+  <% if @status == "attack" %>
+      <p class="attack-text"> <%= @name_1 %> attacked <%= @name_2 %>!</p>
+  <%end %>
 
-<% if @status == "attack" %>
-    <p> <%= @name_1 %> attacked <%= @name_2 %> </p>
-<%end %>
+</div>
