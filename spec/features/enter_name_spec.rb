@@ -1,8 +1,16 @@
 require "./app"
 
 feature "Enter name" do
-  scenario "User enters name" do
+  before :each do
     sign_in_and_play
-    expect(page).to have_text("Jimmy HITPOINTS = 100 vs Bob HITPOINTS = 100")
   end
+
+  scenario "Player 1 enters name" do
+    expect(page).to have_content("#{$player_1.name}")
+  end
+
+  scenario "Player 2 enters name" do
+    expect(page).to have_content("#{$player_2.name}")
+  end
+
 end
