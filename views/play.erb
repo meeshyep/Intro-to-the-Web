@@ -61,4 +61,11 @@
     <p class="hitpoints">HITPOINTS = 100</p>
     <img src="http://66.media.tumblr.com/tumblr_m2ewv8Psq21rptf33o1_500.gif">
   </div>
+  <form action="/attack" method="post">
+    <button type="submit"> Attack </button>
+  </form>
 </div>
+
+<% if @status == "attack" %>
+    <p> <%= @name_1 %> attacked <%= @name_2 %> </p>
+<%end %>

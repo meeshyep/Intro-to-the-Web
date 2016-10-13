@@ -20,14 +20,16 @@ enable :sessions
   get '/play' do
     @name_1 = $player_1.name
     @name_2 = $player_2.name
+    @status = nil
     erb (:play)
   end
 
-  # get '/attack' do
-  #   @name_1 = $player_1.name
-  #   @name_2 = $player_2.name
-  #   erb (:attack)
-  # end
+  post '/attack' do
+    @name_1 = $player_1.name
+    @name_2 = $player_2.name
+    @status = "attack"
+    erb (:play)
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
