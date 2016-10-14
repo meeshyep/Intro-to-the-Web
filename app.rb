@@ -17,15 +17,15 @@ enable :sessions
 
   get '/play' do
     @game = $game
-    @status = nil
-    @status = session[:status]
+    # @status = nil
+    # @status = session[:status]
     erb (:play)
   end
 
   get '/attack' do
     @game = $game
-    @game.attack(@game.players[@game.turn[0]])
-    session[:status] = 'attack'
+    @game.attack(@game.players[@game.turn[1]])
+    # session[:status] = 'attack'
     redirect '/play'
   end
 
