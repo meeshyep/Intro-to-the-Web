@@ -27,12 +27,12 @@
   }
 
   .left img, .right img {
-    width: 80%;
+    width: 70%;
     padding-top: 60px;
   }
 
   .right img {
-    padding-top: 80px;
+    padding-top: 100px;
     width: 70%;
   }
 
@@ -41,12 +41,21 @@
   }
 
   .middle button {
+    background-color: #ff3333;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    font-size: 60%;
+    letter-spacing: 3px;
+    opacity: 0.8;
     width: 15%;
     height: 5%;
     position: absolute;
     top: 400;
     right: 530;
     text-transform: uppercase;
+    cursor:url(http://cur.cursors-4u.net/food/images2/foo124.gif),auto;
   }
 
   .hitpoints {
@@ -60,5 +69,4 @@
     text-shadow: 2px 2px #000;
     text-align: center;
     position: relative;
-    top: -370;
   }

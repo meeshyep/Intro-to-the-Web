@@ -41,7 +41,6 @@ form button {
   margin-right: auto;
   display: block;
   border: 0;
-  border-bottom: 4px solid #921919;
   margin-top: 140px;
   background: #C91212;
   width: 40%;
@@ -49,8 +48,10 @@ form button {
   color: #fff;
   font-size: 22px;q
   font-family: 'Press Start 2P', cursive;
-  padding-left: 20px;
+  letter-spacing: 2px;
+  text-align: center;
   text-shadow: 2px 2px #521414;
+  border-radius: 12px;
 }
 
 form button:hover {

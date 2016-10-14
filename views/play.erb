@@ -8,7 +8,7 @@
   <div class="left">
     <%= @game.players[0].name %>
     <p class="hitpoints"> HITPOINTS = <%= @game.players[0].hitpoints %>  </p>
-    <img src="http://67.media.tumblr.com/tumblr_mdf4r6t5yk1rptf33o1_500.gif">
+    <img src="http://i812.photobucket.com/albums/zz50/frogsplash46/animals_dancingRainbowMonkey.gif">
   </div>
   <div class="middle">
     vs
@@ -19,9 +19,9 @@
   <div class="right">
     <%= @game.players[1].name %>
     <p class="hitpoints"> HITPOINTS = <%= @game.players[1].hitpoints %> </p>
-    <img src="http://66.media.tumblr.com/tumblr_m2ewv8Psq21rptf33o1_500.gif">
+    <img src="http://i.imgur.com/SXJFqMc.gif">
   </div>
-  <p> <%= @game.players[@game.turn[0]].name %>'s turn </p>
+  <p class="middle"> <%= @game.players[@game.turn[0]].name %>'s turn </p>
   <% unless @game.players[0].hitpoints == 100 && @game.players[1].hitpoints == 100 %>
     <p class="attack-text"> <%= @game.players[@game.turn[1]].name %> attacked <%= @game.players[@game.turn[0]].name %>!</p>
     <% end %>
