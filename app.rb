@@ -24,9 +24,8 @@ enable :sessions
 
   get '/attack' do
     @game = $game
-    @game.attack(@game.player_2)
+    @game.attack(@game.players[@game.turn[0]])
     session[:status] = 'attack'
-    @game.attack(@game.players[@game.turn[1]])
     redirect '/play'
   end
 

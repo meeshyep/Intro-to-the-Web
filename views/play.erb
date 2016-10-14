@@ -24,7 +24,7 @@
   </div>
   <p> <%= @game.players[@game.turn[0]].name %>'s turn </p>
   <% if @status == "attack" %>
-      <p class="attack-text"> <%= @game.players[@game.turn[0]].name %> attacked <%= @game.players[@game.turn[1]].name %>!</p>
-  <p> <%= @game.players[@game.turn[0]].name%>'s turn </p>
+      <p class="attack-text"> <%= @game.players[@game.turn[1]].name %> attacked <%= @game.players[@game.turn[0]].name %>!</p>
+  <p> <%= @game.players[@game.turn[1]].name%>'s turn </p>
   <%end %>
 </div>

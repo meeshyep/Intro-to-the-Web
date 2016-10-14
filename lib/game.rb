@@ -7,13 +7,13 @@ class Game
     @turn = [0, 1]
   end
 
-  def player_1
-    players[0]
-  end
-
-  def player_2
-    players[1]
-  end
+  # def player_1
+  #   players[0]
+  # end
+  #
+  # def player_2
+  #   players[1]
+  # end
 
   def attack(player)
     player.lose_hitpoints
