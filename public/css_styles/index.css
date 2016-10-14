@@ -1,0 +1,68 @@
+@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+
+body {
+  font-size: 30px;
+  text-transform: uppercase;
+  background: url('http://i.imgur.com/VNfw0A4.gif');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+}
+.players {
+  width: 50%;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.players div {
+  width: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.player1 {
+  float: left;
+}
+
+.player2 {
+  float: right;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+form button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 0;
+  border-bottom: 4px solid #921919;
+  margin-top: 140px;
+  background: #C91212;
+  width: 40%;
+  height: 10%;
+  color: #fff;
+  font-size: 22px;q
+  font-family: 'Press Start 2P', cursive;
+  padding-left: 20px;
+  text-shadow: 2px 2px #521414;
+}
+
+form button:hover {
+  background: #f10606;
+}
+
+form input {
+  margin-top: 20px;
+  width: 85%;
+  height: 35px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 10px;
+}
