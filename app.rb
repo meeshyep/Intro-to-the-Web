@@ -11,23 +11,22 @@ enable :sessions
   end
 
   post '/names' do
-    @player_1 = Player.new(params[:name_1])
-    @player_2 = Player.new(params[:name_2])
-    $game = Game.new(@player_1, @player_2)
+    $game = Game.new(params[:name_1], params[:name_2])
     redirect '/play'
   end
 
   get '/play' do
-    @player_1 = $game.player_1
-    @player_2 = $game.player_2
+    @game = $game
     @status = nil
     @status = session[:status]
     erb (:play)
   end
 
-  post '/attack' do
-    $game.attack
+  get '/attack' do
+    @game = $game
+    @game.attack(@game.player_2)
     session[:status] = 'attack'
+    @game.attack(@game.players[@game.turn[1]])
     redirect '/play'
   end
 

@@ -6,23 +6,25 @@
 
 <div class="container">
   <div class="left">
-    <%= @player_1.name %>
-    <p class="hitpoints"> HITPOINTS = <%= @player_1.hitpoints %>  </p>
+    <%= @game.players[0].name %>
+    <p class="hitpoints"> HITPOINTS = <%= @game.players[0].hitpoints %>  </p>
     <img src="http://67.media.tumblr.com/tumblr_mdf4r6t5yk1rptf33o1_500.gif">
   </div>
   <div class="middle">
     vs
-    <form action="/attack" method="post">
+    <!-- <p> <%= @game.players[1].name %> 's turn </p> -->
+    <form action="/attack" method="get">
       <button type="submit"> Attack </button>
     </form>
   </div>
   <div class="right">
-    <%= @player_2.name %>
-    <p class="hitpoints"> HITPOINTS = <%= @player_2.hitpoints %> </p>
+    <%= @game.players[1].name %>
+    <p class="hitpoints"> HITPOINTS = <%= @game.players[1].hitpoints %> </p>
     <img src="http://66.media.tumblr.com/tumblr_m2ewv8Psq21rptf33o1_500.gif">
   </div>
+  <p> <%= @game.players[@game.turn[0]].name %>'s turn </p>
   <% if @status == "attack" %>
-      <p class="attack-text"> <%= @player_1.name %> attacked <%= @player_2.name %>!</p>
+      <p class="attack-text"> <%= @game.players[@game.turn[0]].name %> attacked <%= @game.players[@game.turn[1]].name %>!</p>
+  <p> <%= @game.players[@game.turn[0]].name%>'s turn </p>
   <%end %>
-
 </div>

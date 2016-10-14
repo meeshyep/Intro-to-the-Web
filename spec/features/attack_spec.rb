@@ -8,10 +8,10 @@ feature "Attack player 2" do
   end
 
   scenario "As player 1" do
-    expect(page).to have_text("#{$game.player_1.name} attacked #{$game.player_2.name}")
+    expect(page).to have_content("Jimmy attacked Bob")
   end
 
   scenario "As player 1" do
-    expect(page).to have_text("#{$game.player_2.hitpoints}")
+    expect(page).to have_content("HITPOINTS = 90")
   end
 end
