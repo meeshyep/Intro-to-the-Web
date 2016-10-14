@@ -8,10 +8,10 @@ feature "Attack player 2" do
   end
 
   scenario "As player 1" do
-    expect(page).to have_content("Jimmy attacked Bob")
+    expect(page).to have_content("#{Game.game.players[Game.game.turn[1]].name} attacked #{Game.game.players[Game.game.turn[0]].name}!")
   end
 
   scenario "As player 1" do
-    expect(page).to have_content("HITPOINTS = 90")
+    expect(page).to have_content("#{Game.game.players[Game.game.turn[0]].name} HITPOINTS = #{Player::DEFAULT_HITPOINTS-Player::DEFAULT_ATTACK}")
   end
 end

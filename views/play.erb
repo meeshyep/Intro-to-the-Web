@@ -12,7 +12,6 @@
   </div>
   <div class="middle">
     vs
-    <!-- <p> <%= @game.players[1].name %> 's turn </p> -->
     <form action="/attack" method="get">
       <button type="submit"> Attack </button>
     </form>
@@ -23,5 +22,10 @@
     <img src="http://66.media.tumblr.com/tumblr_m2ewv8Psq21rptf33o1_500.gif">
   </div>
   <p> <%= @game.players[@game.turn[0]].name %>'s turn </p>
-      <p class="attack-text"> <%= @game.players[@game.turn[1]].name %> attacked <%= @game.players[@game.turn[0]].name %>!</p>
+  <% unless @game.players[0].hitpoints == 100 && @game.players[1].hitpoints == 100 %>
+    <p class="attack-text"> <%= @game.players[@game.turn[1]].name %> attacked <%= @game.players[@game.turn[0]].name %>!</p>
+    <% end %>
+    <% if @game.players[@game.turn[1]].hitpoints <= 0 %>
+    <%= @game.players[1].name %> has lost the battle!
+    <% end %> </p>
 </div>

@@ -11,24 +11,20 @@ enable :sessions
   end
 
   post '/names' do
-    $game = Game.new(params[:name_1], params[:name_2])
+    Game.begin(params[:name_1], params[:name_2])
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
-    # @status = nil
-    # @status = session[:status]
+    @game = Game.game
     erb (:play)
   end
 
   get '/attack' do
-    @game = $game
-    @game.attack(@game.players[@game.turn[1]])
-    # session[:status] = 'attack'
+    @game = Game.game
+    @game.attack(@game.idle_player)
     redirect '/play'
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
